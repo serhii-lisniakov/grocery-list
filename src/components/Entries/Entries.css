@@ -1,0 +1,29 @@
+.entry {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px 100px 55px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgb(180, 147, 163) 0%, rgb(199, 175, 202) 100%);
+    margin-bottom: 4px;
+    align-items: center;
+}
+.entry-actions span {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+.entry-actions svg path {
+    fill: rgb(3, 2, 29);
+    transition: .4s;
+}
+.entry-actions span:hover svg path {
+    fill: crimson;
+}
+.entry-date {
+    font-size: 14px;
+}
+.entry-status span {
+    padding: 1px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}

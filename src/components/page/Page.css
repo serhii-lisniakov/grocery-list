@@ -1,0 +1,36 @@
+.page {
+    z-index: 0;
+    height: calc(100vh - 100px);
+    padding: 50px 20px 30px;
+    transition: .5s;
+    overflow: hidden;
+}
+.page::after {
+    position: fixed;
+    z-index: 10;
+    content: 'Copyright © Serhii Lisniakov';
+    font-size: 10px;
+    width: calc(100vw + 20px);
+    height: 30px;
+    background: linear-gradient(270deg, rgba(31,29,30,1) 0%, rgba(127,144,0,1) 100%);
+    bottom: 0px;
+    left: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-list {
+    background: rgba(4, 51, 38, 0.8);
+}
+.page-entries {
+    background: rgba(65, 34, 37, 0.8);
+}
+.page-error {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aa9494;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: monospace;
+}
