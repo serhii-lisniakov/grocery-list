@@ -1,0 +1,95 @@
+.list-help {
+    background: rgb(245, 222, 179);
+    padding: 15px 40px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: -125px;
+    left: -50px;
+    position: relative;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    transition: .4s;
+    &:hover {
+        opacity: 1;
+        .tip::after, .tip {
+            opacity: 1;
+        }
+    }
+    &::after {
+        content: 'Tips:';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 12px;
+        font-style: italic;
+    }
+    .tip {
+        position: absolute;
+        font-size: 16px;
+        font-weight: 600;
+        white-space: nowrap;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 3px 5px;
+        letter-spacing: 0;
+        opacity: 0;
+        transition: 1s;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            opacity: 0;
+            transition: 1s;
+        }
+    }
+    .name {
+        z-index: 1;
+        .tip {
+            bottom: -35px;
+            left: -20px;
+            &::after {
+                top: -14px;
+                left: -7px;
+                transform: rotate(-26deg);
+            }
+        }
+    }
+    .item-status {
+        margin-left: 20px;
+        background: rgba(255,0,0,0.6);
+        position: relative;
+        cursor: inherit;
+        .tip {
+            top: -35px;
+            left: 50px;
+            &::after {
+                top: 24px;
+                left: 17px;
+                transform: rotate(-190deg);
+            }
+        }
+    }
+}
+.help-tip {
+    position: fixed;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: left;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #333;
+    background: #d3b36e;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+    pointer-events: none;
+    z-index: 100;
+    transform: translateY(-100%);
+    span {
+        font-family: sans-serif;
+    }
+}

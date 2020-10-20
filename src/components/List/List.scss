@@ -1,0 +1,161 @@
+.desk {
+    padding: 20px 15px;
+    height: calc(100vh - 60px);
+    display: flex;
+}
+.list {
+    overflow-y: scroll;
+    height: 79vh;
+    max-width: 800px;
+    flex-grow: 1;
+    margin-left: auto;
+    padding: 30px 30px 30px 100px;
+    background: url(../assets/paper.png) center left;
+    background-size: cover;
+    transform: rotate(-0.5deg);
+    border-radius: 10px;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    &-empty {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: italic;
+    }
+}
+.item {
+    display: grid;
+    padding: 5px 0;
+    grid-template-columns: 1fr 100px 100px 35px;
+    border-bottom: 1px solid rgba(73, 52, 50, 0.589);
+    align-items: center;
+    &-name {
+        .name {
+            position: relative;
+            display: inline-block;
+            font-family: 'Gloria Hallelujah', cursive;
+            line-height: 1.1;
+            font-weight: 600;
+            letter-spacing: 3px;
+            font-size: 26px;
+            white-space: nowrap;
+            &::first-letter {
+                text-transform: uppercase;
+            }
+            .marker {
+                position: absolute;
+                top: -2px;
+                left: -10px;
+                width: 0;
+                height: 120%;
+                z-index: -1;
+                animation: marker .5s ease-in-out forwards;
+                animation-delay: .7s;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 0;
+                    left: -5px;
+                    height: 100%;
+                    z-index: -1;
+                    animation: markerShadow .5s ease-in-out forwards;
+                    animation-delay: 1.5s;
+                }
+            }
+            .marker1 {
+                transform: rotate(-4deg);
+                background: rgba(255, 0, 0, 0.5);
+                &::after {
+                    transform: rotate(4deg);
+                    background: rgba(255, 0, 0, 0.5);
+                }
+            }
+            .marker2 {
+                transform: rotate(3deg);
+                background: rgba(255, 145, 0, 1);
+                &::after {
+                    transform: rotate(-5deg);
+                    background: rgba(255, 145, 0, 0.8);
+                }
+            }
+            .marker3 {
+                transform: rotate(3deg);
+                background: rgba(255, 255, 0, 0.5);
+                &::after {
+                    transform: rotate(-5deg);
+                    background: rgba(255, 255, 0, 0.8);
+                }
+            }
+            .marker4 {
+                transform: rotate(1deg);
+                background: rgb(106, 223, 38);
+                &::after {
+                    transform: rotate(1deg);
+                    background: rgba(106, 223, 38, 0.7);
+                }
+            }
+            .marker5 {
+                transform: rotate(0deg);
+                background: rgba(3, 95, 34, 0.8);
+                &::after {
+                    transform: translateX(10%) rotate(1deg);
+                    background: rgba(14, 95, 3, 0.5);
+                }
+            }
+        }
+    }
+    &-status {
+        width: 70px;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 2px 0;
+        font-family: 'Indie Flower', cursive;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 19px;
+    }
+    &-date {
+        font-size: 20px;
+        font-family: 'Indie Flower', cursive;
+        line-height: 1;
+        font-weight: 600;
+        span {
+            font-style: italic;
+            font-weight: normal;
+            font-size: 10px;
+        }
+    }
+    &-delete {
+        svg {
+            cursor: pointer;
+            margin-left: 15px;
+            path {
+                transition: .3s;
+            }
+            &:hover path {
+                fill: rgb(150, 0, 0);
+            }
+        }
+        
+    }
+}
+
+@keyframes marker {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 120%;
+    }
+}
+@keyframes markerShadow {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
