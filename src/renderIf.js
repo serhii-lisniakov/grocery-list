@@ -1,1 +1,0 @@
-export const RenderIf = (props) => !!props.condition ? props.children : null;
