@@ -1,15 +1,12 @@
 import {createStore, combineReducers} from 'redux'
 import {composeWithDevTools} from "redux-devtools-extension";
-import {entriesReducer} from '../redux/entries'
+import {itemsReducer} from '../redux/List/reducer'
 
 const rootReducer = combineReducers({
-    entriesReducer
+    items: itemsReducer
 })
-
-const initialState = localStorage.getItem('grocery') || {};
 
 export const store = createStore(
     rootReducer,
-    // initialState,
     composeWithDevTools()
 )
